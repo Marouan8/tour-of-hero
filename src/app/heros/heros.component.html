@@ -1,5 +1,10 @@
+<h2>My heros</h2>
 <div>
-    <p *ngFor="let hero of heros" >{{hero.name}}</p>
-
+    <ul>
+    <li *ngFor="let hero of heros" (click)="selectHero(hero)"><a routerLink="/detail/{{hero.id}}">{{hero.name}}</a></li>
+    </ul>
 </div>
+
+
+
 

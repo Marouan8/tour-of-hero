@@ -13,8 +13,8 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
 const appRoutes: Routes = [
   { path : 'dashboard', component: DashboardComponent },
   { path: 'heros', component: HerosComponent },
-  { path: '', component: DashboardComponent, pathMatch:'full'},
-  { path: 'hero-detail', component: HerodetailComponent }
+  { path: 'detail/:id', component: HerodetailComponent },
+  { path: '', component: DashboardComponent,}
 ];
 
 @NgModule({
