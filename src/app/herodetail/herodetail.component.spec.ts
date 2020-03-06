@@ -1,16 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HerodetailComponent } from './herodetail.component';
+import { HerodetailComponent } from "./herodetail.component";
+import { HeroService } from "../services/hero/hero.service";
+import { Router } from "@angular/router";
 
-describe('HerodetailComponent', () => {
+describe("HerodetailComponent", () => {
   let component: HerodetailComponent;
   let fixture: ComponentFixture<HerodetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HerodetailComponent ]
-    })
-    .compileComponents();
+      declarations: [HerodetailComponent, HeroService],
+      providers: [
+        {
+          provide: Router,
+          useValue: {
+            navigate: jasmine.createSpy("navigate")
+          }
+        }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +28,7 @@ describe('HerodetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
