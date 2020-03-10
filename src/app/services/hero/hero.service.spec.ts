@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
 import { HeroService } from './hero.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
@@ -10,8 +10,14 @@ describe('HeroService', () => {
   ],
   }));
 
-  it('should be created', () => {
+  it("should be created", () => {
     const service: HeroService = TestBed.get(HeroService);
     expect(service).toBeTruthy();
+  });
+
+  describe("getHero", () => {
+    it("should return the hero with given id", () => {});
+
+    it("should return undefined when id not found", () => {});
   });
 });
