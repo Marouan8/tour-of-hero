@@ -1,5 +1,16 @@
-<h2>Hero detail</h2>
-
-<p>name of hero: {{name | uppercase}} </p>
-<a routerLink="/heros">Retour à la liste des heros</a>
+<div *ngIf="hero">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+      <p>age : {{hero.age}} ans</p>
+      <p>city : {{hero.city}}</p>
+      <p>origin : {{hero.origin}}</p>
+    </div>
+    
+   
+  </div>
+<button (click)="goBack()">Retour</button>
 

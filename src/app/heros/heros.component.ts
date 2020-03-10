@@ -3,6 +3,7 @@ import { Hero } from '../share/hero.model';
 import { HeroService } from '../services/hero/hero.service';
 
 
+
 @Component({
   selector: 'app-heros',
   templateUrl: './heros.component.html',
@@ -10,17 +11,20 @@ import { HeroService } from '../services/hero/hero.service';
 })
 export class HerosComponent implements OnInit {
 
-  heros:Hero[];
-  selectedHero: Hero;
+  heroes:Hero[];
+  
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heros= this.heroService.getHero();
+    this.getHeroes();
+
+  }
+  getHeroes() {
+    this.heroService.getHeroes()
+    .subscribe(heroes => this.heroes = heroes);
   }
 
-  selectHero(hero: Hero) {
-    this.selectedHero = hero;
-  }
+  
 
 }

@@ -3,6 +3,8 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { HerodetailComponent } from "./herodetail.component";
 import { HeroService } from "../services/hero/hero.service";
 import { Router } from "@angular/router";
+import { RouterTestingModule } from '@angular/router/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe("HerodetailComponent", () => {
   let component: HerodetailComponent;
@@ -10,14 +12,13 @@ describe("HerodetailComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HerodetailComponent, HeroService],
+      declarations: [HerodetailComponent],
+      schemas: [ NO_ERRORS_SCHEMA ],
+      imports: [
+        RouterTestingModule
+      ],
       providers: [
-        {
-          provide: Router,
-          useValue: {
-            navigate: jasmine.createSpy("navigate")
-          }
-        }
+        HeroService
       ]
     }).compileComponents();
   }));
