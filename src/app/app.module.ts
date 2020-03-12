@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
-
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -12,6 +12,8 @@ import { HeroService } from './services/hero/hero.service';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import {MessagesComponent} from './messages/messages.component';
 import { MessageService} from './services/messages.service';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 const appRoutes: Routes = [
   { path : 'dashboard', component: DashboardComponent },
@@ -32,7 +34,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [ HeroService, MessageService],
   bootstrap: [AppComponent]

@@ -22,11 +22,7 @@ export class HerodetailComponent implements OnInit {
 
   ngOnInit() {
     this.getHero();
-    //const id = this.route.snapshot.params['id'];
-   //this.name  = this.heroService.getHeroDetail(+id).name;
-   //this.age = this.heroService.getHeroDetail(+id).age;
-   //this.city = this.heroService.getHeroDetail(+id).city;
-   //this.origin= this.heroService.getHeroDetail(+id).origin;
+    
   }
 
   getHero(): void {
@@ -38,6 +34,10 @@ export class HerodetailComponent implements OnInit {
   goBack(): void {
     this.router.navigate(['/heros']);
 
+  }
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
   }
 
 

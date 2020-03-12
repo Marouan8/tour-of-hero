@@ -2,9 +2,10 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { HerodetailComponent } from "./herodetail.component";
 import { HeroService } from "../services/hero/hero.service";
-import { Router } from "@angular/router";
+
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe("HerodetailComponent", () => {
   let component: HerodetailComponent;
@@ -15,7 +16,8 @@ describe("HerodetailComponent", () => {
       declarations: [HerodetailComponent],
       schemas: [ NO_ERRORS_SCHEMA ],
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
       providers: [
         HeroService
