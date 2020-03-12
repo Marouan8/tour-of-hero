@@ -14,6 +14,8 @@ import {MessagesComponent} from './messages/messages.component';
 import { MessageService} from './services/messages.service';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
 
 const appRoutes: Routes = [
   { path : 'dashboard', component: DashboardComponent },
@@ -38,7 +40,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [ HeroService, MessageService],
   bootstrap: [AppComponent]
