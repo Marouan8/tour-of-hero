@@ -18,11 +18,12 @@
         <input #heroOrigin />
     </label>
 
-    <button
+    
+</div>
+<button mat-raised-button
         (click)="add(heroName.value,heroAge.value,heroCity.value,heroOrigin.value); heroName.value='';heroAge.value='';heroCity.value='';heroOrigin.value=''">
         add
     </button>
-</div>
 
 <ul class="heroes">
     <li *ngFor="let hero of heroes">

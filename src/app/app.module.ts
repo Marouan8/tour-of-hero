@@ -17,6 +17,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 
+
 const appRoutes: Routes = [
   { path : 'dashboard', component: DashboardComponent },
   { path: 'heros', component: HerosComponent },
