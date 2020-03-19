@@ -2,6 +2,8 @@ import { TestBed } from "@angular/core/testing";
 
 import { HeroService } from './hero.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { Hero } from 'src/app/share/hero.model';
+import { HttpErrorResponse } from '@angular/common/http';
 
 describe('HeroService', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -16,8 +18,12 @@ describe('HeroService', () => {
   });
 
   describe("getHero", () => {
-    it("should return the hero with given id", () => {});
+    it("should return the hero with given id", () => {
+        
+    });
 
-    it("should return undefined when id not found", () => {});
+    it('should return undefined when id not found', () => {
+      
+    });
   });
 });
