@@ -27,6 +27,10 @@ describe("HerosComponent", () => {
   });
 
   describe("getHeroes", () => {
-    it("should get heroes list", () => {});
+    it("should get heroes list", () => {
+      spyOn(component, 'getHeroes').and.callThrough();
+      component.getHeroes();
+      expect(component.getHeroes).toHaveBeenCalled();
+    });
   });
 });
